@@ -6,13 +6,16 @@
 #include <RF24.h>
 //#include <string>
 #include "images.h"
+#include <ezButton.h>
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET    -1 //or set to the pin you wired to RST
+
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 RF24 radio(9, 10); // CE, CSN
 byte i = 45;
+ezButton button(3);
 const int wifiFrequencies[] = {2412, 2417, 2422, 2427, 2432, 2437, 2442, 2447, 2452, 2457, 2462};
 const char* modes[] = {"BLE & All 2.4 GHz", "Just Wi-Fi", "Waiting Idly :("};
 uint8_t attack_type = 2;
@@ -116,6 +119,19 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  button.loop();
+  if (button.isPressed()) {
+    attack_type = (attack_type + 1) % 3;
+    displayMessage((String(modes[attack_type])+" Mode").c_str());
+  }
+  switch (attack_type) {
+    case 0:
+      fullAttack();
+      break;
+    case 1:
+      wifiAttack();
+      break;
+    case 2:
+      break;
+  }
 }
