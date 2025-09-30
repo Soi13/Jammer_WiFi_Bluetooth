@@ -104,3 +104,5 @@
     <td>Another Pin of button</td>
   </tr>
 </table><br/>
+<h3>License & Legal Disclaimer</h3>
+<p>This project is for <b>educational purposes</b> only and unauthorized usage is <b>illegal</b>. </p>
