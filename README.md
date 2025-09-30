@@ -15,4 +15,92 @@
     <th>Arduino Nano</th>
     <th>NRF24L01+PA+LNA</th>
   </tr>
-</table>
+  <tr>
+    <td>D9</td>
+    <td>CE</td>
+  </tr>
+  <tr>
+    <td>D10</td>
+    <td>CSN</td>
+  </tr>
+  <tr>
+    <td>D11</td>
+    <td>MOSI</td>
+  </tr>
+  <tr>
+    <td>D12</td>
+    <td>MISO</td>
+  </tr>
+  <tr>
+    <td>D13</td>
+    <td>SCK</td>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>GND</td>
+  </tr>
+</table><br/>
+
+<table>
+  <tr>
+    <th>Arduino Nano</th>
+    <th>AMS1117-3.3</th>
+  </tr>
+  <tr>
+    <td>5V</td>
+    <td>VIN</td>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>GND</td>
+  </tr>
+</table><br/>
+
+<table>
+  <tr>
+    <th>NRF24L01+PA+LNA</th>
+    <th>AMS1117-3.3</th>
+  </tr>
+  <tr>
+    <td>VCC</td>
+    <td>VOUT (3.3V)</td>
+  </tr>
+</table><br/>
+
+<table>
+  <tr>
+    <th>Arduino Nano</th>
+    <th>OLED SSD1306</th>
+  </tr>
+  <tr>
+    <td>5V</td>
+    <td>VCC</td>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>GND</td>
+  </tr>
+  <tr>
+    <td>A5</td>
+    <td>SCL</td>
+  </tr>
+  <tr>
+    <td>A4</td>
+    <td>SDA</td>
+  </tr>
+</table><br/>
+
+<table>
+  <tr>
+    <th>Arduino Nano</th>
+    <th>Button</th>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>One Pin of button on GND</td>
+  </tr>
+  <tr>
+    <td>D3</td>
+    <td>Another Pin of button</td>
+  </tr>
+</table><br/>
