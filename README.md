@@ -1,0 +1,3 @@
+<H1>Wifi & Bluetooth jammer</H1>
+<p>The device suppress wifi and bluetooth signals.As a base I took code and circuit of [@system-linux] [FazJammer](https://github.com/system-linux/FazJammer) and simplified it a little by deleting graphics and some functions. Also insted of ESP8266 I used Arduino Nano, additionally I ussed in circuit AMS1117 voltage regulator which that takes a higher voltage (like 5V) and outputs a stable 3.3V. </p>
+<p>It necessary since the nRF24L01 can spike up to 115 mA when transmitting. The Arduino Nano’s onboard 3.3V pin can only supply ~50 mA reliably, so powering directly from Nano causes brownouts - USB disconnects. With AMS1117-3.3, we give the nRF24L01 its own stable 3.3V.</p>
