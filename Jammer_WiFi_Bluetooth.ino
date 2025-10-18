@@ -5,6 +5,12 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 
+#define GREEN_LED 6
+#define RED_LED 7
+bool LED_STATE = false;
+unsigned long prevMills = 0;
+const long duration = 300; //Blinking interval of led
+
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET    -1 //or set to the pin you wired to RST
@@ -64,11 +70,22 @@ void handleEncoder() {
 
 //Button press (with debounce)
 void handleButton() {
+  unsigned long currMills = millis();
   //static unsigned long lastButtonTime = 0;
   //if (digitalRead(SW) == LOW && millis() - lastButtonTime > 1000) {
   if (digitalRead(SW) == LOW) {
+      //Blinking by led while button is pressed
+      if (currMills - prevMills >= duration) {
+        prevMills = currMills;
+        LED_STATE = !LED_STATE;
+        digitalWrite(RED_LED, LED_STATE);
+      }
     executeAction(selectedItem);
     //lastButtonTime = millis();
+  } else {
+    digitalWrite(GREEN_LED, LOW);
+    digitalWrite(RED_LED, HIGH);
+    LED_STATE = false;
   }
 }
 
@@ -114,6 +131,8 @@ void setup() {
   pinMode(CLK, INPUT_PULLUP);
   pinMode(DT, INPUT_PULLUP);
   pinMode(SW, INPUT_PULLUP);
+  pinMode(GREEN_LED, OUTPUT);
+  pinMode(RED_LED, OUTPUT);
   Wire.begin();
 
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // 0x3C or 0x3D
@@ -157,6 +176,7 @@ void setup() {
 }
 
 void loop() {
+  digitalWrite(GREEN_LED, HIGH);
   handleEncoder();
   handleButton();
 }
