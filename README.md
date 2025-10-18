@@ -93,15 +93,49 @@
 <table>
   <tr>
     <th>Arduino Nano</th>
-    <th>Button</th>
-  </tr>
-  <tr>
-    <td>GND</td>
-    <td>One Pin of button on GND</td>
+    <th>Rotary encoder</th>
   </tr>
   <tr>
     <td>D3</td>
-    <td>Another Pin of button</td>
+    <td>A</td>
+  </tr>
+  <tr>
+    <td>D4</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>D5</td>
+    <td>P2</td>
+  </tr>
+  <tr>
+    <td>3.3V</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td>-</td>
+  </tr>
+</table><br/>
+
+<table>
+  <tr>
+    <th>Arduino Nano</th>
+    <th>Green LED</th>
+  </tr>
+  <tr>
+    <td>D6 (positive pin of LED)</td>
+    <td>GND</td>
+  </tr>
+</table><br/>
+
+<table>
+  <tr>
+    <th>Arduino Nano</th>
+    <th>Red LED</th>
+  </tr>
+  <tr>
+    <td>D7 (positive pin of LED)</td>
+    <td>GND</td>
   </tr>
 </table><br/>
 <h3>License & Legal Disclaimer</h3>
